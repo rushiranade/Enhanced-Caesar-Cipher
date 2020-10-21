@@ -1,4 +1,3 @@
-# COPYRIGHT 2020 - RUSHI RANADE'S APPS
 # AMPLIFIED CAESAR CIPHER
 def encrypt(text,s): 
     result = "" 
