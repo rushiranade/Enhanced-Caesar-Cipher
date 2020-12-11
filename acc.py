@@ -1,23 +1,17 @@
 # AMPLIFIED CAESAR CIPHER
-
-#This content has been created by Rushi Ranade.
-#This is free and unencumbered software released into the public domain.
-
-#Anyone is free to copy, modify, publish, use, compile, sell, or distribute
-#this software, either in source code form or as a compiled binary, for any
-#purpose, commercial or non-commercial, and by any means.
-
 def encrypt(text,s): 
     result = "" 
     n = int(input("n = "))
     for i in range(len(text)):
         char = text[i] 
-  
-        if (char.isupper()): 
-            result += chr((ord(char) + s-65) % 26 + 65) 
-  
-        else: 
-            result += chr((ord(char) + s - 97) % 26 + 97)
+        if char == " ":
+            result += char
+        else:
+            if (char.isupper()): 
+                result += chr((ord(char) + s-65) % 26 + 65) 
+      
+            else: 
+                result += chr((ord(char) + s - 97) % 26 + 97)
         if (s * n) <=26:
             s = s * n
         else:
@@ -30,12 +24,14 @@ def decrypt(text,s):
     n = int(input("n"))
     for i in range(len(text)):
         char = text[i] 
-  
-        if (char.isupper()): 
-            result += chr((ord(char) - s-65) % 26 + 65) 
-  
-        else: 
-            result += chr((ord(char) - s - 97) % 26 + 97)
+        if char == " ":
+            result += char
+        else:
+            if (char.isupper()): 
+                result += chr((ord(char) - s-65) % 26 + 65) 
+      
+            else: 
+                result += chr((ord(char) - s - 97) % 26 + 97)
         if (s * n) <=26:
             s = s * n
         else:
